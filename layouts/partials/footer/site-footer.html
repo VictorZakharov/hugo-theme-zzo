@@ -20,6 +20,7 @@
                 {{ else }}
                     {{ with $.Site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
                 {{ end }}
+				- Build: {{ now.Format "2006-01-02 15:04:05 MST" }}
             </p>
         {{ end }}
 

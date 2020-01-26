@@ -59,8 +59,8 @@
       text-decoration: underline;
     }
 
-    font-size: 16.4px;
     margin: 1rem 0;
+    font-size: 1rem;
     line-height: 1.7;
     width: inheirt;
     max-width: inherit;
@@ -132,6 +132,7 @@
       border-radius: 0.34rem;
       line-height: 1.5;
       font-size: 13.8px;
+      
       @include themify($themes) {
         @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
         @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
@@ -357,7 +358,6 @@
 
           th, td {
             padding: 5px 15px;
-            font-size: 13.8px;
             border: 1px double themed('content-pre-border-background-color');
           }
         }
@@ -544,5 +544,19 @@ li .highlight > .chroma {
   }
   .lnt:not(:first-child) {
     padding: 0 0.3rem;
+  }
+}
+
+td:not(.lntd) {
+  code {
+    padding: 2px 7px !important;
+  }
+}
+
+table:not(.lntable) {
+  td {
+    code {
+      padding: 2px 7px !important;
+    }
   }
 }

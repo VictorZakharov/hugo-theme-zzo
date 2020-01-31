@@ -3,9 +3,13 @@
 English | 
 [한국어](https://github.com/zzossig/hugo-theme-zzo/blob/master/README.ko.md)
 
-🔥🔥🔥🤓The minimum Hugo version changed to 0.60.0. This version changed the markdown rendering library, so if you are using an older version, it may not be compatible.🔥🔥🔥
+😸The minimum Hugo version changed to 0.60.0. This version changed the markdown rendering library, so if you are using an older version, it may not be compatible.😸
 
 Thank you for click me!. Zzo theme is a blog theme powered by Hugo with free(always), and many features. 
+
+## Documentation
+
+[https://zzodocs.netlify.com/docs/](https://zzodocs.netlify.com/docs/)
 
 ## Table of contents
 
@@ -37,11 +41,12 @@ Thank you for click me!. Zzo theme is a blog theme powered by Hugo with free(alw
 * Search Engine Optimization(SEO)
 * Multilingual (i18n)
 * Responsive design
-* RSS and JSON feeds with full content
+* RSS
 * Search
 * Gallery
 * Fast code highlighting
-* Talks page for external links
+* Talks page
+* Showcase page
 
 ## Minimum Hugo version
 
@@ -219,6 +224,7 @@ description = "The Zzo theme for Hugo example site." # for SEO
 custom_css = [] # custom_css = ["scss/custom.scss"] and then make file at root/assets/scss/custom.scss
 custom_js = [] # custom_js = ["js/custom.js"] and then make file at root/assets/js/custom.js
 useFaviconGenerator = false # https://www.favicon-generator.org/
+languagedir = "ltr" # ltr / rtl
 
 themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # select options for site color theme
 notAllowedTypesInHome = ["contact", "talks", "about", "showcase"] # not allowed page types in home page. type can be set in front matter or default to folder name.
@@ -248,7 +254,8 @@ talksGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 myname = "zzossig"
 email = "zzossig@gmail.com"
 whoami = "Web Developer"
-useGravatar = false
+bioImageUrl = "" # image url like http//... If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
+useGravatar = false # we use this option highest priority
 location = "Seoul, Korea"
 organization = "Hugo"
 link = "https://github.com/zzossig/hugo-theme-zzo"
@@ -352,6 +359,8 @@ commento = false
   mastodon = ""
   jianshu = ""
   zhihu = ""
+  signal = ""
+  whatsapp = ""
 
 [donationOptions]
   enable = false # if set, the donation button will show up on the single page.
@@ -441,7 +450,7 @@ root
 
 ## Contact Page
 
-Currently available service: [formspree]. Open an issue if you need another service vendor.
+Currently available service: [formspree]. Open an issue if you need another service vendor. If you want just a blank page and use a markdown, set the service param empty.
 
 1. Make a file at root/contact/index.md
 
@@ -955,6 +964,7 @@ title:
 author: # author name
 authorEmoji: 🤖 # emoji for subtitle, summary meta data
 authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
+authorImageUrl: "" # your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.
 authorDesc: # author description
 socialOptions: # override params.toml file socialOptions
   email: ""

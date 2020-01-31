@@ -8,6 +8,11 @@
 클릭해 주셔서 감사합니다. Zzo theme은 많은 기능을 지원하고있고 있습니다. 기술 블로그를 운영하기에 최적화 되어있습니다!(적어도 제생각엔...)
 Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로 저와 소통할 수 있다는 점? 입니다. 
 
+## Documentation
+
+영문버전 도큐먼트
+[https://zzodocs.netlify.com/docs/](https://zzodocs.netlify.com/docs/)
+
 ## Table of contents
 
 * [기능](#features)
@@ -40,6 +45,8 @@ Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로
 * 검색 (지원 예정)
 * 갤러리 지원
 * 코드 하이라이트
+* 토크 페이지
+* 쇼케이스 페이지
 
 ## Minimum Hugo version
 
@@ -226,6 +233,7 @@ description = "The Zzo theme for Hugo example site." # for SEO
 custom_css = [] # custom_css = ["scss/custom.scss"] and then make file at root/assets/scss/custom.scss
 custom_js = [] # custom_js = ["js/custom.js"] and then make file at root/assets/js/custom.js
 useFaviconGenerator = false # https://www.favicon-generator.org/
+languagedir = "ltr" # ltr / rtl
 
 themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # select options for site color theme
 notAllowedTypesInHome = ["contact", "talks", "about", "showcase"] # not allowed page types in home page. type can be set in front matter or default to folder name.
@@ -255,7 +263,8 @@ talksGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 myname = "zzossig"
 email = "zzossig@gmail.com"
 whoami = "Web Developer"
-useGravatar = false
+bioImageUrl = "" # image url like http//... If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
+useGravatar = false # we use this option highest priority
 location = "Seoul, Korea"
 organization = "Hugo"
 link = "https://github.com/zzossig/hugo-theme-zzo"
@@ -359,6 +368,8 @@ commento = false
   mastodon = ""
   jianshu = ""
   zhihu = ""
+  signal = ""
+  whatsapp = ""
 
 [donationOptions]
   enable = false # if set, the donation button will show up on the single page.
@@ -450,7 +461,7 @@ root
 
 ## Contact Page
 
-현재 이용 가능한 서비스: [formspree]. 다른 서비스를 이용하고 싶으시면 새 이슈를 만들어주세요.
+현재 이용 가능한 서비스: [formspree]. 다른 서비스를 이용하고 싶으시면 새 이슈를 만들어주세요. 서비스 파라미터를 빈값으로 설정하면 마크다운으로 해당 페이지를 채울 수 있습니다.
 
 1. 파일을 다음 경로에 만들어줍니다. root/contact/index.md
 
@@ -963,6 +974,7 @@ title:
 author: # author name
 authorEmoji: 🤖 # emoji for subtitle, summary meta data
 authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
+authorImageUrl: "" # your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.
 authorDesc: # author description
 socialOptions: # override params.toml file socialOptions
   email: ""

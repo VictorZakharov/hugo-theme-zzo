@@ -51,6 +51,7 @@
 
   &__contents {
     @include animation('slide-in-left-little .2s .6s 1 ease-in both');
+    
     &--gallery {
       overflow: hidden;
     }
@@ -132,6 +133,7 @@
       border-radius: 0.34rem;
       line-height: 1.5;
       font-size: 13.8px;
+      direction: ltr;
       
       @include themify($themes) {
         @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
@@ -285,8 +287,19 @@
       list-style: disc outside none;
     }
 
+    &[data-dir="rtl"] {
+      li {
+        margin-right: 2rem;
+      }
+    }
+
+    &[data-dir="ltr"] {
+      li {
+        margin-left: 2rem;
+      }
+    }
+
     li {
-      margin-left: 2rem;
       margin-bottom: calc(1rem / 2);
 
       & > code {
@@ -357,7 +370,7 @@
           }
 
           th, td {
-            padding: 5px 15px;
+            padding: 0.25rem 0.5rem;
             border: 1px double themed('content-pre-border-background-color');
           }
         }
@@ -427,6 +440,7 @@ pre:not(.chroma) {
   overflow-x: auto;
   position: relative;
   margin: 1rem 0;
+  direction: ltr;
 
   @include on-event {
     .copy-to-clipboard {
@@ -459,7 +473,8 @@ pre:not(.chroma) {
   border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
   z-index: z('content');
-  overflow-x: auto;  
+  overflow-x: auto;
+  direction: ltr;
 
   @include themify($codeblock) {
     color: themed('content-pre-color');

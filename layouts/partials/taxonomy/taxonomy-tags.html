@@ -8,6 +8,7 @@
         </span>
         {{ range $index, $element := .Site.Taxonomies.tags }}
         {{ if $index }}
+		{{ if gt (len $element) 1 }}
             <span class="tag">
                 <a href="{{ $element.Page.RelPermalink }}" class="is-tags taxo__link">
                     <span class="taxo__text">
@@ -18,6 +19,7 @@
                     </span>
                 </a>
             </span>
+		{{ end }}
         {{ end }}
         {{ end }}
     </section>

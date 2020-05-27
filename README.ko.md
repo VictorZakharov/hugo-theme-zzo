@@ -239,9 +239,17 @@ themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # select optio
 notAllowedTypesInHome = ["contact", "talks", "about", "showcase"] # not allowed page types in home page. type can be set in front matter or default to folder name.
 notAllowedTypesInHomeSidebar = ["about", "archive", "showcase"] # not allowed page types in home page sidebar(recent post titles).
 notAllowedTypesInArchive = ["about", "talks", "showcase"] # not allowed page types in archive page
+notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
+
+viewportSize = "normal" # widest, wider, wide, normal, narrow
+enableUiAnimation = true
+hideSingleContentsWhenJSDisabled = false
 
 # header
 homeHeaderType = "text" # text, img, slide
+
+# menu
+showMobileMenuTerms = ["tags", "categories", "series"]
 
 # navbar
 enableThemeChange = true # site color theme
@@ -263,14 +271,15 @@ talksGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 myname = "zzossig"
 email = "zzossig@gmail.com"
 whoami = "Web Developer"
-bioImageUrl = "" # image url like http//... If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
+bioImageUrl = "" # image url like "http//..." or "images/anyfoldername/mybioimage.jpg" If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
 useGravatar = false # we use this option highest priority
 location = "Seoul, Korea"
 organization = "Hugo"
 link = "https://github.com/zzossig/hugo-theme-zzo"
 
 # sidebar
-enableBio = true # home page sidebar
+enableBio = true # in home page sidebar
+enableBioImage = true # in home page sidebar
 enableSidebar = true # Set to false to create the full width of the content.
 enableSidebarTags = true # if you want to use tags.
 enableSidebarSeries = true
@@ -280,9 +289,12 @@ enableListSidebarTitles = true
 enableToc = true # single page table of contents, you can replace this param to toc(toc = true)
 hideToc = false # Hide or Show toc
 tocPosition = "inner" # inner, outer
+tocFolding = false
 enableTocSwitch = true # single page table of contents visibility switch
 itemsPerCategory = 5 # maximum number of posts shown in the sidebar.
 sidebarPosition = "right" # bio, profile component layout position
+tocLevels = ["h2", "h3", "h4"] # minimum h2, maximum h4 in your article
+enableSidebarPostsByOrder = false # another lists in the sidebar
 
 # footer
 showPoweredBy = true # show footer text: Powered by Hugo and Zzo theme
@@ -291,11 +303,17 @@ showSocialLinks = true # email, facebook, twitter ...
 enableLangChange = true # show button at bottom left of footer.
 
 # service
+googleTagManager = "" # GTM-XXXXXX
 baiduAnalytics = "" # alternative of google analytics
 enableBusuanzi = false # if set true, total page view, total unique visitors show up in the footer.
 busuanziSiteUV = true # unique visitors (total number of visitors)
 busuanziSitePV = true # site total page view count
 busuanziPagePV = true # post view count
+
+# rss
+updatePeriod = "" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
+updateFrequency = ""
+fullContents = false
 
 # comment
 enableComment = true
@@ -370,6 +388,12 @@ commento = false
   zhihu = ""
   signal = ""
   whatsapp = ""
+  matrix = ""
+  xmpp = ""
+  dev-to = ""
+  gitea = ""
+  google-scholar = ""
+  twitch = ""
 
 [donationOptions]
   enable = false # if set, the donation button will show up on the single page.
@@ -385,12 +409,19 @@ commento = false
   copyrightLinkImage = ""
   copyrightLinkText = ""
 
-# possible share name: ["facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line"]
+# possible share name: "facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line", "whatsapp", "telegram"
 [[share]]
   name = "facebook"
   username = ""
 [[share]]
   name = "twitter"
+
+[[footerLinks]]
+  name = ""
+  link = ""
+[[footerLinks]]
+  name = ""
+  link = ""
 ```
 
 ## Gallery
@@ -463,7 +494,7 @@ root
 
 현재 이용 가능한 서비스: [formspree]. 다른 서비스를 이용하고 싶으시면 새 이슈를 만들어주세요. 서비스 파라미터를 빈값으로 설정하면 마크다운으로 해당 페이지를 채울 수 있습니다.
 
-1. 파일을 다음 경로에 만들어줍니다. root/contact/index.md
+1. 파일을 다음 경로에 만들어줍니다. root/content/contact/index.md
 
 ```yaml
 ---

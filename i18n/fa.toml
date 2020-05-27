@@ -25,6 +25,12 @@ other = "Jan 2"
 [single-dateformat]
 other = "Jan 2, 2006"
 
+[pub-dateformat]
+other = "2006-01-02"
+
+[resume-dateformat]
+other = "Jan, 2006"
+
 [single-related]
 other = "پست های مشابه"
 
@@ -32,7 +38,7 @@ other = "پست های مشابه"
 other = "نوشته شده توسط"
 
 [toc-label]
-other = "عناوین اصلی"
+other = "محتوای پست"
 
 [counter-site-pv]
 other = "کل بازدید ها"
@@ -55,11 +61,20 @@ other = "نام"
 [contact-email]
 other = "ایمیل"
 
+[contact-tel]
+other = "تلفن تماس"
+
+[contact-file]
+other = "فایل"
+
 [contact-message]
 other = "پیام"
 
 [contact-send]
 other = "ارسال"
+
+[contact-browse]
+other = "مرور"
 
 [tooltip-home]
 other = "خانه"
@@ -74,8 +89,13 @@ other = "اصلاح شده در"
 other = "مدت زمان خواندن"
 
 [showcase-overview]
-other = "بررسی اجمالی"
+other = "ویترین"
 
 [showcase-pinned]
 other = "پین شده"
 
+[nojs-message]
+other = "لطفا برای نمایش محتوا اجرای جاوا اسکریپت را فعال کنید"
+
+[posts-by-order]
+other = "پست های پربازدید"

@@ -37,4 +37,12 @@ socialOptions:
   mastodon: ""
   jianshu: ""
   zhihu: ""
+  signal: ""
+  whatsapp: ""
+  matrix: ""
+  xmpp: ""
+  dev-to: ""
+  gitea: ""
+  google-scholar: ""
+  twitch: ""
 ---

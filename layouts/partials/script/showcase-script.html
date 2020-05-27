@@ -2,8 +2,8 @@
 <script defer src="{{ $shave.RelPermalink }}"></script>
 
 <script>
-  {{ $enableBio:= .Params.enableBio }}
-  {{ $sidebarPosition:= .Site.Params.sidebarPosition }}
+  {{ $enableBio:= $.Param "enableBio" }}
+  {{ $sidebarPosition:= $.Param "sidebarPosition" }}
   var enableBio = JSON.parse({{ $enableBio | jsonify }});
   var sidebarPosition = JSON.parse({{ $sidebarPosition | jsonify }});
 
@@ -58,6 +58,14 @@
           sectionElem.classList.remove(gridBig);
           sectionElem.classList.remove(gridFull);
           sectionElem.classList.add(gridFull);
+        }
+
+        var navCollapseBtn = document.querySelector('.navbar__burger');
+        var navCollapse = document.getElementsByClassName('navbarm__collapse')[0];
+        if (navCollapse) {
+          navCollapse.setAttribute('data-open', false);
+          navCollapse.style.maxHeight = 0;
+          navCollapseBtn.classList.remove('is-active');
         }
       },
       setup: function () { },

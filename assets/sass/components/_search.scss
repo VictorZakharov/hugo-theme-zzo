@@ -66,6 +66,87 @@
       color: themed('search-highlight-color');
     }
   }
+
+  &-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include themify($themes) {
+      background-color: themed('body-background-color');
+    }
+
+    &[data-display="block"] {
+      display: block; 
+    }
+
+    &[data-display="none"] {
+      display: none;
+    }
+
+    &__header {
+    }
+
+    &__body {
+      margin-top: 1rem;
+      padding: 0 1rem;
+      position: relative;
+      display: block;
+      overflow: auto;
+      height: 100%;
+
+      @include themify($themes) {
+        @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+        @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+      }
+    }
+
+    &__item {
+      &:not(first-child) {
+        padding-bottom: 2.25rem; 
+      }
+
+      &--title {
+        font-family: $title-font;
+        font-size: 1.5rem;
+        margin: 0.25rem 0;
+
+        &::before {
+          content: "📋 ";
+        }
+      }
+
+      &--desc {
+        font-size: 1rem;
+        margin: 0.25rem 0;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      cursor: pointer;
+      
+      &[data-dir="ltr"] {
+        right: 0.5rem;
+        top: -1.5rem;
+      }
+      
+      &[data-dir="rtl"] {
+        left: 0.5rem;
+        top: -1.5rem;
+      }
+
+      @include themify($themes) {
+        color: themed('social-icon-color');
+
+        @include on-event {
+          color: themed('social-icon-hover-color');
+        }
+      }
+    }
+  }
 }
 
 .menu-item {
@@ -73,8 +154,13 @@
 
   &__title {
     font-size: 1rem;
+    
     @include themify($themes) {
       color: themed('body-color');
+    }
+
+    &::before {
+      content: '📄 ';
     }
   }
 
@@ -84,7 +170,7 @@
 
     @include truncate($grid_main_side_width + $grid_main_side_unit);
     @include themify($themes) {
-      color: themed('search-color');
+      color: themed('meta-color');
     }
   }
 }
@@ -121,7 +207,7 @@
 
     &-item {
       font-size: 1rem;
-      padding: 0.125rem;
+      padding: 0.125rem 0.25rem;
       @include on-event {
         @include themify($themes) {
           background-color: themed('search-hover-background-color');
@@ -259,11 +345,16 @@
     display: none;
     z-index: z('search-btn');
 
-    @include animation('slide-in-down .5s .25s 1 ease both');
+    &[data-ani="true"] {
+      @include animation('slide-in-down .5s .25s 1 ease both');
+    }
+    
     @include themify($themes) {
-      color: themed('burger-menu-color');  
+      color: themed('burger-menu-color');
+      background-color: themed('navbar-background-color');
+      border-bottom: 1px solid themed('navbar-border-bottom-color');
       @include on-event {
-        color: themed('link-hover');   
+        color: themed('navbar-title-hover-color');   
       }
     }
 
@@ -281,11 +372,23 @@
   }
 
   &__item {   
-    padding: 0.5rem;   
+    padding: 0.5rem;
+    list-style-type: none;
+
+    &:not(first-child) {
+      padding-bottom: 0.75rem;
+    }
+
     &--title {
+      font-family: $title-font;
       font-size: 1.2rem;      
+      margin: 0.25rem 0;
       @include themify($themes) {
         color: themed('body-color');
+      }
+
+      &::before {
+        content: "📋 ";
       }
     }
 

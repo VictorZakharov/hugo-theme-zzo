@@ -27,6 +27,7 @@
           {{ with $.Param "author" }}
           &middot; <span title="{{ i18n "single-writtenBy" }}" dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}">{{ if $.Param "authorEmoji" }}{{ $.Param "authorEmoji" }}{{ else }}✍️{{ end }}&nbsp;{{ . }}</span>
           {{ end }}
+		  {{ partial "body/tags" . }}
         </h6>
       </header>
       <div>

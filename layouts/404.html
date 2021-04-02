@@ -1,8 +1,14 @@
 {{ define "main" }}
 <main class="main">
   <div class="not-found">
+    {{ partial "search/site-search" . }}
     <h1 class="h1 title">404</h1>
     <h6 class="h6 subtitle">Page not found</h6>
+    <article class="single__contents">
+      <p>I am sorry, the page you were looking for was not found.</p>
+      <p>If you came from <a href="http://www.neolisk.com/">neolisk.com</a>, it means a page redirect is missing. Please let me know at <a href="mailto:neolisk@gmail.com">neolisk@gmail.com</a> in this case.</p>
+      <p>You might have also been referred here by Google or another search engine. In either case try searching for the content using site search above.</p>      
+    </article>
   </div>
 </main>
 {{ partial "script/home-script" . }}

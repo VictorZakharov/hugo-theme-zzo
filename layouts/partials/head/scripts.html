@@ -685,7 +685,7 @@
         if (sectionType === "publication" && kind !== "page") {
           xhr.open('GET', permalink + "index.json");
         } else {
-          xhr.open('GET', baseurl + langprefix + "/index.json");
+          xhr.open('GET', baseurl + langprefix + "index.json");
         }
         
         xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
@@ -883,7 +883,7 @@
                 } else {
                   descDiv = document.createElement('div');
                   descDiv.setAttribute('class', 'menu-item__desc');
-                  descDiv.innerHTML = result.item.content.substring(0, 150);
+                  descDiv.innerHTML = result.item.title.substring(0, 150);
                 }
               }
             }
@@ -979,7 +979,7 @@
                 } else {
                   descDiv = document.createElement('div');
                   descDiv.setAttribute('class', 'mobile-search__item--desc');
-                  descDiv.innerHTML = result.item.content.substring(0, 150);
+                  descDiv.innerHTML = result.item.title.substring(0, 150);
                 }
               }
             }
